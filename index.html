@@ -24,7 +24,8 @@
 		}
 		#sonic {
             background: blue;
-			transition: all 0.2s;
+            width: 800px;
+            height: 400px;
 		}
 	</style>
 </head>
@@ -36,55 +37,56 @@
 		<canvas id="sonic" style="width: 800px; height:400px;">
         </canvas>
 	</div>
-	<!-- <script>
+	<script>
 		var doina;
-		doina = document.getElementsByClassName("_balloon")[0];
-		doina.style.background = 'red';
-		doina.style.width = '200px';
-		doina.style.height = '200px';
+		doina = document.getElementById("sonic");
+		// doina.style.background = 'red';
+		doina.style.width = '800px';
+		doina.style.height = '400px';
 		doina.addEventListener('click', gonfle);
 		doina.addEventListener('mouseout', degonfle);
-		function gonfle() {
-			if (parseInt(doina.style.width) < 411 && parseInt(doina.style.height) < 411) {
-				doina.style.width = parseInt(doina.style.width) + 10 + 'px';
-				doina.style.height = parseInt(doina.style.height) + 10 + 'px';
-			}
-			else {
-				doina.style.width = 200 + 'px';
-				doina.style.height = 200 + 'px';
-			}
-			color();
-		}
-		function degonfle() {
-			if (parseInt(doina.style.width) > 200 && parseInt(doina.style.height) > 200) {
-				doina.style.width = parseInt(doina.style.width) - 5 + 'px';
-				doina.style.height = parseInt(doina.style.height) - 5 + 'px';
-			}
-			colorinv();
-		}
-		function color() {
-			if (doina.style.background == 'red') {
-				doina.style.background = 'green';
-			}
-			else if (doina.style.background == 'green') {
-				doina.style.background = 'blue';
-			}
-			else if (doina.style.background == 'blue') {
-				doina.style.background = 'red';
-			}
-		}
-		function colorinv() {
-			if (doina.style.background == 'red') {
-				doina.style.background = 'blue';
-			}
-			else if (doina.style.background == 'blue') {
-				doina.style.background = 'green';
-			}
-			else if (doina.style.background == 'green') {
-				doina.style.background = 'red';
-			}
-		}
-	</script> -->
+        
+        // function gonfle() {
+		// 	if (parseInt(doina.style.width) < 411 && parseInt(doina.style.height) < 411) {
+		// 		doina.style.width = parseInt(doina.style.width) + 10 + 'px';
+		// 		doina.style.height = parseInt(doina.style.height) + 10 + 'px';
+		// 	}
+		// 	else {
+		// 		doina.style.width = 200 + 'px';
+		// 		doina.style.height = 200 + 'px';
+		// 	}
+		// 	color();
+		// }
+		// function degonfle() {
+		// 	if (parseInt(doina.style.width) > 200 && parseInt(doina.style.height) > 200) {
+		// 		doina.style.width = parseInt(doina.style.width) - 5 + 'px';
+		// 		doina.style.height = parseInt(doina.style.height) - 5 + 'px';
+		// 	}
+		// 	colorinv();
+		// }
+		// function color() {
+		// 	if (doina.style.background == 'red') {
+		// 		doina.style.background = 'green';
+		// 	}
+		// 	else if (doina.style.background == 'green') {
+		// 		doina.style.background = 'blue';
+		// 	}
+		// 	else if (doina.style.background == 'blue') {
+		// 		doina.style.background = 'red';
+		// 	}
+		// }
+		// function colorinv() {
+		// 	if (doina.style.background == 'red') {
+		// 		doina.style.background = 'blue';
+		// 	}
+		// 	else if (doina.style.background == 'blue') {
+		// 		doina.style.background = 'green';
+		// 	}
+		// 	else if (doina.style.background == 'green') {
+		// 		doina.style.background = 'red';
+		// 	}
+		// }
+	</script>
 </body>
 
 <script src="script.js"></script>
