@@ -23,9 +23,9 @@
 			transform: translate(-50%, -50%);
 		}
 		#sonic {
-            background: blue;
-            width: 800px;
-            height: 400px;
+            /* background-color: blue; */
+            /* width: 800px; */
+            /* height: 400px; */
 		}
 	</style>
 </head>
@@ -37,56 +37,75 @@
 		<canvas id="sonic" style="width: 800px; height:400px;">
         </canvas>
 	</div>
-	<script>
-		var doina;
-		doina = document.getElementById("sonic");
-		// doina.style.background = 'red';
-		doina.style.width = '800px';
-		doina.style.height = '400px';
-		doina.addEventListener('click', gonfle);
-		doina.addEventListener('mouseout', degonfle);
-        
-        // function gonfle() {
-		// 	if (parseInt(doina.style.width) < 411 && parseInt(doina.style.height) < 411) {
-		// 		doina.style.width = parseInt(doina.style.width) + 10 + 'px';
-		// 		doina.style.height = parseInt(doina.style.height) + 10 + 'px';
-		// 	}
-		// 	else {
-		// 		doina.style.width = 200 + 'px';
-		// 		doina.style.height = 200 + 'px';
-		// 	}
-		// 	color();
-		// }
-		// function degonfle() {
-		// 	if (parseInt(doina.style.width) > 200 && parseInt(doina.style.height) > 200) {
-		// 		doina.style.width = parseInt(doina.style.width) - 5 + 'px';
-		// 		doina.style.height = parseInt(doina.style.height) - 5 + 'px';
-		// 	}
-		// 	colorinv();
-		// }
-		// function color() {
-		// 	if (doina.style.background == 'red') {
-		// 		doina.style.background = 'green';
-		// 	}
-		// 	else if (doina.style.background == 'green') {
-		// 		doina.style.background = 'blue';
-		// 	}
-		// 	else if (doina.style.background == 'blue') {
-		// 		doina.style.background = 'red';
-		// 	}
-		// }
-		// function colorinv() {
-		// 	if (doina.style.background == 'red') {
-		// 		doina.style.background = 'blue';
-		// 	}
-		// 	else if (doina.style.background == 'blue') {
-		// 		doina.style.background = 'green';
-		// 	}
-		// 	else if (doina.style.background == 'green') {
-		// 		doina.style.background = 'red';
-		// 	}
-		// }
-	</script>
+	<!-- <script>
+		var canvas;
+		canvas = document.getElementById("sonic");
+		canvas.style.background = 'red';
+		canvas.style.width = '800px';
+        canvas.style.height = '400px';
+        canvas.addEventListener('click', gonfle);
+        var x = 20;
+        var y = 20;
+        // canvas.addEventListener('mouseout', degonfle);
+        var ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.rect(x, y, 10, 10);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.closePath();
+
+        function gonfle() {
+            ctx.clearRect(x, y, 10, 10);
+            x += 10;
+            y += 0;
+            afficher();
+			// if (parseInt(doina.style.width) < 411 && parseInt(doina.style.height) < 411) {
+                // 	doina.style.width = parseInt(doina.style.width) + 10 + 'px';
+                // 	doina.style.height = parseInt(doina.style.height) + 10 + 'px';
+                // }
+                // else {
+                    // 	doina.style.width = 200 + 'px';
+                    // 	doina.style.height = 200 + 'px';
+                    // }
+                    // color();
+                }
+                function afficher() {
+                    ctx.beginPath();
+                    ctx.rect(x, y, 10, 10);
+                    ctx.fillStyle = "green";
+                    ctx.fill();
+                    ctx.closePath();
+		}
+		function degonfle() {
+			if (parseInt(doina.style.width) > 200 && parseInt(doina.style.height) > 200) {
+				doina.style.width = parseInt(doina.style.width) - 5 + 'px';
+				doina.style.height = parseInt(doina.style.height) - 5 + 'px';
+			}
+			colorinv();
+		}
+		function color() {
+			if (doina.style.background == 'red') {
+				doina.style.background = 'green';
+			}
+			else if (doina.style.background == 'green') {
+				doina.style.background = 'blue';
+			}
+			else if (doina.style.background == 'blue') {
+				doina.style.background = 'red';
+			}
+		}
+		function colorinv() {
+			if (doina.style.background == 'red') {
+				doina.style.background = 'blue';
+			}
+			else if (doina.style.background == 'blue') {
+				doina.style.background = 'green';
+			}
+			else if (doina.style.background == 'green') {
+				doina.style.background = 'red';
+			}
+		}
+	</script> -->
 </body>
 
 </html>
