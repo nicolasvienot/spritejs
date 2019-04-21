@@ -14,8 +14,8 @@ var audio = new Audio('./common/mp3/2006.mp3');
         };
         
 const scale = .45;
-const width = 102.9;
-const height = 120;
+const width = 73;
+const height = 75.9;
 const scaledWidth = scale * width;
 const scaledHeight = scale * height;
 
@@ -28,7 +28,7 @@ function drawFrame(frameX, frameY, canvasX, canvasY){
         window.requestAnimationFrame(step);
     }
     
-    const cycleLoop = [.88, 1.9, 3, 4];
+    const cycleLoop = [.88, 1.9, 2.98,];
     let currentLoopIndex = 0;
     let frameCount = 0;
     
@@ -40,7 +40,7 @@ function drawFrame(frameX, frameY, canvasX, canvasY){
         }
         frameCount=0;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawFrame(cycleLoop[currentLoopIndex], 2.14, x, y);
+        drawFrame(cycleLoop[currentLoopIndex], 4.94, x, y);
         currentLoopIndex++;
         if (currentLoopIndex >= cycleLoop.length) {
             currentLoopIndex = 0;
