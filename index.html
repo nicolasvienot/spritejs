@@ -37,75 +37,76 @@
 		<canvas id="sonic" style="width: 800px; height:400px;">
         </canvas>
 	</div>
-	<!-- <script>
+	<script>
 		var canvas;
 		canvas = document.getElementById("sonic");
-		canvas.style.background = 'red';
 		canvas.style.width = '800px';
+		canvas.style.background = 'red';
         canvas.style.height = '400px';
-        canvas.addEventListener('click', gonfle);
-        var x = 20;
+        var x = 150;
         var y = 20;
-        // canvas.addEventListener('mouseout', degonfle);
         var ctx = canvas.getContext("2d");
         ctx.beginPath();
         ctx.rect(x, y, 10, 10);
+        
         ctx.fillStyle = "green";
         ctx.fill();
         ctx.closePath();
-
-        function gonfle() {
-            ctx.clearRect(x, y, 10, 10);
-            x += 10;
-            y += 0;
-            afficher();
-			// if (parseInt(doina.style.width) < 411 && parseInt(doina.style.height) < 411) {
-                // 	doina.style.width = parseInt(doina.style.width) + 10 + 'px';
-                // 	doina.style.height = parseInt(doina.style.height) + 10 + 'px';
-                // }
-                // else {
-                    // 	doina.style.width = 200 + 'px';
-                    // 	doina.style.height = 200 + 'px';
-                    // }
-                    // color();
-                }
-                function afficher() {
-                    ctx.beginPath();
-                    ctx.rect(x, y, 10, 10);
-                    ctx.fillStyle = "green";
-                    ctx.fill();
-                    ctx.closePath();
+        document.addEventListener("keyup", function(event){
+        if (event.keyCode == 37) {
+            deplgauche(); }
+        if (event.keyCode == 38) {
+            deplhaut(); }
+        if (event.keyCode == 39) {
+            depldroite(); }
+        if (event.keyCode == 40) {
+            deplbas(); }
+        });
+        
+        function depldroite() {
+            if (x <= 280)
+            {
+                ctx.clearRect(x, y, 10, 10);
+                x += 10;
+                y += 0;
+                afficher();
+            }
+        }
+        function deplhaut() {
+            if (y > 0)
+            {
+                ctx.clearRect(x, y, 10, 10);
+                x += 0;
+                y -= 10;
+                afficher();
+            } 
+        }
+        function deplbas() {
+            if (y <= 130)
+            {
+                ctx.clearRect(x, y, 10, 10);
+                x += 0;
+                y += 10;
+                afficher();
+            }
+        }
+        function deplgauche() {
+            if (x > 0)
+            {
+                ctx.clearRect(x, y, 10, 10);
+                x -= 10;
+                y += 0;
+                afficher();
+            }
+        }
+        function afficher() {
+            ctx.beginPath();
+            ctx.rect(x, y, 10, 10);
+            ctx.fillStyle = "green";
+            ctx.fill();
+            ctx.closePath();
 		}
-		function degonfle() {
-			if (parseInt(doina.style.width) > 200 && parseInt(doina.style.height) > 200) {
-				doina.style.width = parseInt(doina.style.width) - 5 + 'px';
-				doina.style.height = parseInt(doina.style.height) - 5 + 'px';
-			}
-			colorinv();
-		}
-		function color() {
-			if (doina.style.background == 'red') {
-				doina.style.background = 'green';
-			}
-			else if (doina.style.background == 'green') {
-				doina.style.background = 'blue';
-			}
-			else if (doina.style.background == 'blue') {
-				doina.style.background = 'red';
-			}
-		}
-		function colorinv() {
-			if (doina.style.background == 'red') {
-				doina.style.background = 'blue';
-			}
-			else if (doina.style.background == 'blue') {
-				doina.style.background = 'green';
-			}
-			else if (doina.style.background == 'green') {
-				doina.style.background = 'red';
-			}
-		}
-	</script> -->
+	</script>
 </body>
 
 <script src="script.js"></script>
