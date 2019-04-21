@@ -1,30 +1,16 @@
-sonicImage = new Image();
-sonicImage.src = "common/image/sonic.png";
+img = new Image();
+img.src = "./common/images/sonic.png";
+
+img.onload = function() {
+    init();
+  };
+  
 
 let canvas = document.getElementById("sonic");
+let ctx = canvas.getContext('2d');
 
+const scale = .5;
 
-let sonic = sprite({
-
-    context: canvas.getContext("2d"),
-    width: 100,
-    heigth: 100,
-    Image:sonicImage,
-    },
-    that.render = function () {
-        that.context.drawImage(
-            that.Image,
-            0,
-            0,
-            that.width,
-            that.height,
-            0,
-            0,
-            that.width,
-            that.height);
-        }
-        )
-
-sonic.render();
-    
-    
+function init() {
+    ctx.drawImage(img, 0, 0, 90, 120, 0, 0, 90 * scale, 120 * scale);
+}
