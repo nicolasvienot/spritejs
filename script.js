@@ -27,7 +27,6 @@ function drawFrame(frameX, frameY, canvasX, canvasY){
         // drawFrame(3, 0, scaledWidth*3, 0);
         // drawFrame(4, 0, scaledWidth*4, 0);
         // drawFrame(5, 0, scaledWidth*5, 0);
-
         window.requestAnimationFrame(step);
     }
     
