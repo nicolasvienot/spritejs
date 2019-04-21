@@ -38,6 +38,7 @@
             </canvas>
         </div>
         <script>
+        var audio = new Audio('./common/mp3/2006.mp3');
         img = new Image();
         img.src = "./common/images/sonic.png";
         var canvas;
@@ -80,6 +81,7 @@
         }
                     
         function depldroite() {
+            audio.play();
             if (x <= 280)
             {
                 clear();
@@ -97,6 +99,7 @@
         }
 
         function deplgauche() {
+            audio.play();
             if (x > -30)
             {
                 clear();
@@ -114,6 +117,7 @@
         }
 
         function deplhaut() {
+            audio.play();
             if (y > 0)
             {
                 clear();
@@ -124,6 +128,7 @@
         }
 
         function deplbas() {
+            audio.play();d
             if (y <= 80)
             {
                 clear();
