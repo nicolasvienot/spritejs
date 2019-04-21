@@ -33,28 +33,42 @@
     <h1>Sonic Jumper</h1>
 </header>
 <body>
-	<div class="__container">
-		<canvas id="sonic" style="width: 800px; height:400px;">
-        </canvas>
-	</div>
-	<script>
-		var canvas;
-		canvas = document.getElementById("sonic");
+    <div class="__container">
+        <canvas id="sonic" style="width: 800px; height:400px;">
+            </canvas>
+        </div>
+        <script>
+        var audio = new Audio('./common/mp3/2006.mp3');
+        img = new Image();
+        img.src = "./common/images/sonic.png";
+        var canvas;
+        canvas = document.getElementById("sonic");
 		canvas.style.width = '800px';
 		canvas.style.background = 'red';
         canvas.style.height = '400px';
-        var x = 150;
-        var y = 20;
+        var x = 0;
+        var y = 0;
         var ctx = canvas.getContext("2d");
-        ctx.beginPath();
-        ctx.rect(x, y, 10, 10);
-        ctx.fillStyle = "green";
-        ctx.fill();
-        ctx.closePath();
+        img.onload = function() {
+            init();
+        };
+        const scale = .5;
+        const width = 93;
+        const height = 120;
+        const scaledWidth = scale * width;
+        const scaledHeight = scale * height;
+
+        function drawFrame(frameX, frameY, canvasX, canvasY){
+            ctx.drawImage(img, frameX*width, frameY*height,width, height,
+                canvasX, canvasY, scaledWidth, scaledHeight);
+        }
+        function init() {
+            drawFrame(0, 0, x, y);
+        }
         // document.addEventListener("keyup", controls);
         // document.addEventListener("keydown", controls);
         document.addEventListener("keypress", controls);
-
+        
         function controls(event) {
         if (event.key == 'a') {
             deplgauche(); }
@@ -65,66 +79,71 @@
         if (event.key == 's') {
             deplbas(); }
         }
+                    
         function depldroite() {
             if (x <= 280)
             {
-                ctx.clearRect(x, y, 10, 10);
+                clear();
                 x += 10;
                 y += 0;
-                afficher();
+                display();
             }
             else
             {
-                ctx.clearRect(x, y, 10, 10);
-                x = 0;
+                clear();
+                x = -30;
                 y += 0;
-                afficher();
+                display();
             }
         }
+
+        function deplgauche() {
+            if (x > -30)
+            {
+                clear();
+                x -= 10;
+                y += 0;
+                display();
+            }
+            else
+            {
+                clear();
+                x = 290;
+                y += 0;
+                display();
+            }
+        }
+
         function deplhaut() {
             if (y > 0)
             {
-                ctx.clearRect(x, y, 10, 10);
+                clear();
                 x += 0;
                 y -= 10;
-                afficher();
+                display();
             } 
         }
+
         function deplbas() {
-            if (y <= 130)
+            if (y <= 80)
             {
-                ctx.clearRect(x, y, 10, 10);
+                clear();
                 x += 0;
                 y += 10;
-                afficher();
+                display();
             }
         }
-        function deplgauche() {
-            if (x > 0)
-            {
-                ctx.clearRect(x, y, 10, 10);
-                x -= 10;
-                y += 0;
-                afficher();
-            }
-            else
-            {
-                ctx.clearRect(x, y, 10, 10);
-                x = 290;
-                y += 0;
-                afficher();
-            }
-        }
-        function afficher() {
-            ctx.beginPath();
-            ctx.rect(x, y, 10, 10);
-            ctx.fillStyle = "green";
-            ctx.fill();
-            ctx.closePath();
-		}
-	</script>
-</body>
 
-<script src="script.js"></script>
+        function display() {
+            audio.play();
+            drawFrame(0, 0, x, y);
+        }
+
+        function clear() {
+            ctx.clearRect(x, y, 93, 120);
+        }
+        
+        </script>
+</body>
 
 </html>
