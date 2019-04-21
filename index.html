@@ -1,15 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jumper</title>
-</head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sonic Jumper</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+        body {
+            background: brown;
+        }
 
+        header {
+            color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+		.__container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		#sonic {
+            background: blue;
+			transition: all 0.2s;
+		}
+	</style>
+</head>
+<header>
+    <h1>Sonic Jumper</h1>
+</header>
 <body>
-    
+	<div class="__container">
+		<canvas id="sonic" style="width: 800px; height:400px;">
+        </canvas>
+	</div>
+	<!-- <script>
+		var doina;
+		doina = document.getElementsByClassName("_balloon")[0];
+		doina.style.background = 'red';
+		doina.style.width = '200px';
+		doina.style.height = '200px';
+		doina.addEventListener('click', gonfle);
+		doina.addEventListener('mouseout', degonfle);
+		function gonfle() {
+			if (parseInt(doina.style.width) < 411 && parseInt(doina.style.height) < 411) {
+				doina.style.width = parseInt(doina.style.width) + 10 + 'px';
+				doina.style.height = parseInt(doina.style.height) + 10 + 'px';
+			}
+			else {
+				doina.style.width = 200 + 'px';
+				doina.style.height = 200 + 'px';
+			}
+			color();
+		}
+		function degonfle() {
+			if (parseInt(doina.style.width) > 200 && parseInt(doina.style.height) > 200) {
+				doina.style.width = parseInt(doina.style.width) - 5 + 'px';
+				doina.style.height = parseInt(doina.style.height) - 5 + 'px';
+			}
+			colorinv();
+		}
+		function color() {
+			if (doina.style.background == 'red') {
+				doina.style.background = 'green';
+			}
+			else if (doina.style.background == 'green') {
+				doina.style.background = 'blue';
+			}
+			else if (doina.style.background == 'blue') {
+				doina.style.background = 'red';
+			}
+		}
+		function colorinv() {
+			if (doina.style.background == 'red') {
+				doina.style.background = 'blue';
+			}
+			else if (doina.style.background == 'blue') {
+				doina.style.background = 'green';
+			}
+			else if (doina.style.background == 'green') {
+				doina.style.background = 'red';
+			}
+		}
+	</script> -->
 </body>
 
 </html>
