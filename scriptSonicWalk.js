@@ -1,44 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Sonic Jumper</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-        body {
-            background: brown;
-        }
-
-        header {
-            color: white;
-            text-align: center;
-            font-size: 20px;
-        }
-		.__container {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
-		#sonic {
-            /* background-color: blue; */
-            /* width: 800px; */
-            /* height: 400px; */
-		}
-	</style>
-</head>
-<header>
-    <h1>Sonic Jumper</h1>
-</header>
-<body>
-    <div class="__container">
-        <canvas id="sonic" style="width: 800px; height:400px;">
-            </canvas>
-        </div>
-        <!-- <script>
-        var audio = new Audio('./common/mp3/2006.mp3');
+var audio = new Audio('./common/mp3/2006.mp3');
         img = new Image();
         img.src = "./common/images/sonic.png";
         var canvas;
@@ -53,14 +13,14 @@
             init();
         };
         
-const scale = .5;
-const width = 95;
+const scale = .45;
+const width = 102.9;
 const height = 120;
 const scaledWidth = scale * width;
 const scaledHeight = scale * height;
 
 function drawFrame(frameX, frameY, canvasX, canvasY){
-    ctx.drawImage(img, frameX*width - 2, frameY*height, width, height,
+    ctx.drawImage(img, frameX*width, frameY*height, width, height,
         canvasX, canvasY, scaledWidth, scaledHeight);
     }
     
@@ -68,7 +28,7 @@ function drawFrame(frameX, frameY, canvasX, canvasY){
         window.requestAnimationFrame(step);
     }
     
-    const cycleLoop = [1, 2, 3, 4];
+    const cycleLoop = [.88, 1.98, 7.52];
     let currentLoopIndex = 0;
     let frameCount = 0;
     
@@ -80,7 +40,7 @@ function drawFrame(frameX, frameY, canvasX, canvasY){
         }
         frameCount=0;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawFrame(cycleLoop[currentLoopIndex], 0, x, y);
+        drawFrame(cycleLoop[currentLoopIndex], 1.05, x, y);
         currentLoopIndex++;
         if (currentLoopIndex >= cycleLoop.length) {
             currentLoopIndex = 0;
@@ -166,8 +126,3 @@ function drawFrame(frameX, frameY, canvasX, canvasY){
             ctx.clearRect(x, y, 93, 120);
         }
         
-        </script> -->
-</body>
-<script src="scriptSonicWalk.js"></script>
-
-</html>
