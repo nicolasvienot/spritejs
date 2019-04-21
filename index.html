@@ -34,7 +34,7 @@
 </header>
 <body>
 	<div class="__container">
-		<canvas id="sonic" style="width: 800px; height:400px;">
+		<canvas id="sonic" style="width: 800px; height:400px; z-index: -2;">
         </canvas>
 	</div>
 	<script>
@@ -48,7 +48,6 @@
         var ctx = canvas.getContext("2d");
         ctx.beginPath();
         ctx.rect(x, y, 10, 10);
-        
         ctx.fillStyle = "green";
         ctx.fill();
         ctx.closePath();
