@@ -22,9 +22,4 @@ function drawFrame(frameX, frameY, canvasX, canvasY){
 
 function init() {
     drawFrame(0, 0, 0, 0);
-    drawFrame(1, 0, scaledWidth, 0);
-    drawFrame(2, 0, scaledWidth*2, 0);
-    drawFrame(3, 0, scaledWidth*3, 0);
-    drawFrame(4, 0, scaledWidth*4, 0);
-    drawFrame(5, 0, scaledWidth*5, 0);
 }
