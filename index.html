@@ -73,6 +73,13 @@
                 y += 0;
                 afficher();
             }
+            else
+            {
+                ctx.clearRect(x, y, 10, 10);
+                x = 0;
+                y += 0;
+                afficher();
+            }
         }
         function deplhaut() {
             if (y > 0)
@@ -97,6 +104,13 @@
             {
                 ctx.clearRect(x, y, 10, 10);
                 x -= 10;
+                y += 0;
+                afficher();
+            }
+            else
+            {
+                ctx.clearRect(x, y, 10, 10);
+                x = 290;
                 y += 0;
                 afficher();
             }
