@@ -81,7 +81,6 @@
         }
                     
         function depldroite() {
-            audio.play();
             if (x <= 280)
             {
                 clear();
@@ -99,7 +98,6 @@
         }
 
         function deplgauche() {
-            audio.play();
             if (x > -30)
             {
                 clear();
@@ -117,7 +115,6 @@
         }
 
         function deplhaut() {
-            audio.play();
             if (y > 0)
             {
                 clear();
@@ -128,7 +125,6 @@
         }
 
         function deplbas() {
-            audio.play();d
             if (y <= 80)
             {
                 clear();
@@ -139,6 +135,7 @@
         }
 
         function display() {
+            audio.play();
             drawFrame(0, 0, x, y);
         }
 
